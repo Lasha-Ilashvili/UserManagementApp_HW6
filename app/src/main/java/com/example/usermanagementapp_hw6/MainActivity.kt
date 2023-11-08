@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         if (result.isEmpty()) {
             val dataBaseRes = userDatabase.addUser(user)
-            if (dataBaseRes == "com.example.usermanagementapp_hw6.User added successfully!") {
+            if (dataBaseRes == "User added successfully!") {
                 colorText(dataBaseRes, R.color.green)
                 binding.activeUserCount.text = "Active Users: "+ userDatabase.activeUsers.toString()
             } else {
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun delete(email: String) {
         val result = userDatabase.removeUser(email)
-        if (result == "com.example.usermanagementapp_hw6.User deleted successfully!") {
+        if (result == "User deleted successfully!") {
             colorText(result, R.color.green)
             binding.activeUserCount.text = "Active Users: " + userDatabase.activeUsers.toString()
             binding.deletedUserCount.text = "Deleted Users: "+ userDatabase.deletedUsers.toString()
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 
         if (result.isEmpty()) {
             val dataBaseRes = userDatabase.updateUser(user)
-            if (dataBaseRes == "com.example.usermanagementapp_hw6.User updated successfully") {
+            if (dataBaseRes == "User updated successfully") {
                 colorText(dataBaseRes, R.color.green)
             } else {
                 colorText(dataBaseRes, R.color.red)
